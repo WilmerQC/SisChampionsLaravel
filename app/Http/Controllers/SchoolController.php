@@ -13,6 +13,11 @@ class SchoolController extends Controller{
         return response()->json($schools);
     }
 
+    public function show(School $school){
+        $school=School::find($school);
+        return response()->json($school);
+    }
+
     public function store(SchoolPostRequest $request){
         $school = School::create($request->all());
 
